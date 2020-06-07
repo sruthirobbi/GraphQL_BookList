@@ -11,12 +11,12 @@ const getBooksQuery = gql`
 `
 
 const getAuthorsQuery = gql`
-    {
-        authors{
+{
+    authors{
             name,
             id
         }
-    }
+}
 `
 
 const addBookMutation =gql`

@@ -7,6 +7,7 @@ function AddBook(){
     const [bookData,setBookData] = useState({name:'',genre:'',authorId:''});
     const [book] = useMutation(addBookMutation);
     const {loading,error,data} = useQuery(getAuthorsQuery);
+    
 
     const submitForm =(e)=>{
         e.preventDefault();
@@ -39,7 +40,7 @@ function AddBook(){
 
             <div className="field">
                 <label>Author:</label>
-                <select onChange={e=>setBookData({...bookData,authorId:e.target.value})} value={bookData.authorId}>
+                <select value={bookData.authorId} onChange={e=>setBookData({...bookData,authorId:e.target.value})} >
                     <option>Select Author</option>
                     {data.authors.map(list=>(
                             <option key={list.id} value={list.id}>{list.name}</option>
