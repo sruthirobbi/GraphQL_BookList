@@ -10,8 +10,6 @@ function BookDetails(props){
     });
 
    const displayBookDetails = () => {
-       const {book} = props.bookid;
-       console.log("********",data)
        if(data){
            return(
                <div>

@@ -2,13 +2,14 @@ import React,{useState} from 'react';
 import { useQuery,useMutation } from '@apollo/react-hooks';
 import {getAuthorsQuery,addBookMutation,getBooksQuery} from '../../queries/queries';
 
+
 function AddBook(){
     let input;
-    const [bookData,setBookData] = useState({name:'',genre:'',authorId:''});
+    const [bookData,setBookData] = useState({});
     const [book] = useMutation(addBookMutation);
     const {loading,error,data} = useQuery(getAuthorsQuery);
     
-
+    
     const submitForm =(e)=>{
         e.preventDefault();
         book({
@@ -22,6 +23,7 @@ function AddBook(){
     }
 
     if(loading) return <div>Authors Loading....</div>;
+    if(error) return <div>Authors Error....</div>;
 
     return(
         <form id="add-book"
@@ -49,7 +51,8 @@ function AddBook(){
                 
             </div>
 
-            <button type="submit">+</button>
+            <button type="submit" disabled={(Object.values(bookData).length === 3) ? false:true} >+</button>
+           
         </form>
     )
 }
