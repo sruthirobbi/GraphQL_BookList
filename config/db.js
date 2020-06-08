@@ -6,7 +6,7 @@ const db = config.get('mongoURI');
 
 const connectDB = async()=>{
     try{
-       await mongoose.connect(process.env.MONGODB_URI||db,{ 
+       await mongoose.connect(process.env.MONGOLAB_PURPLE_URI||db,{ 
            useNewUrlParser: true, 
            useUnifiedTopology: true,
            useCreateIndex: true,
