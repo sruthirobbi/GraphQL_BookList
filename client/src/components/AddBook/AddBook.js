@@ -51,8 +51,8 @@ function AddBook(){
                 
             </div>
 
-            <button type="submit" disabled={(Object.values(bookData).length === 3) ? false:true} >+</button>
-           
+            {/* <button type="submit" disabled={(Object.values(bookData).length === 3) ? false:true} >+</button> */}
+            <button type="submit"  >+</button>
         </form>
     )
 }
