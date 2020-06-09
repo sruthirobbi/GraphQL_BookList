@@ -9,8 +9,10 @@ function BookDetails(props){
                 }
     });
 
+    console.log("data",data,"author name", data.author.name)
    const displayBookDetails = () => {
        if(data){
+
            return(
                <div>
                    <h2>{data.book.name}</h2>
