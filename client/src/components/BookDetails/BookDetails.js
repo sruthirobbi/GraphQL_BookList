@@ -9,7 +9,7 @@ function BookDetails(props){
                 }
     });
 
-    console.log("data",data,"author name", data.book.author.name)
+    console.log("data",data)
    const displayBookDetails = () => {
        if(data){
 
