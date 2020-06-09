@@ -9,15 +9,14 @@ function BookDetails(props){
                 }
     });
 
-    console.log("data",data)
    const displayBookDetails = () => {
        if(data){
 
            return(
                <div>
                    <h2>{data.book.name}</h2>
-                    <p>{data.book.genre}</p>
-                    <p>{data.book.author.name}</p>
+                    <p>Genre: {data.book.genre}</p>
+                    <p>Author: {data.book.author.name}</p>
                     <p>All Books by this author: </p>
                     <ul className="other-books">
                         {data.book.author.book.map(item=>{
